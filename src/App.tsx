@@ -1,11 +1,16 @@
 import React from "react";
 import "./App.css";
-import { Counter } from "./components/state/Counter";
+import { UserContextProvider } from "./components/context/UserContext";
+import { User } from "./components/context/User";
+import { MutableRef } from "./components/refs/MutableRef";
 
 function App() {
   return (
     <div className='App'>
-      <Counter />
+      <UserContextProvider>
+        <User />
+        <MutableRef />
+      </UserContextProvider>
     </div>
   );
 }
