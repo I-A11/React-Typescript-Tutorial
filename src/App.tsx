@@ -1,5 +1,4 @@
-// import Component from "./final/05-challenge";
-import Component from "./starter/06-context";
+import Component from "./starter/07-reducers";
 
 function App() {
   return (
