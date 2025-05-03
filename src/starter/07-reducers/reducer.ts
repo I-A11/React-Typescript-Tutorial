@@ -19,6 +19,8 @@ type SetStatusAction = {
   payload: "active" | "inactive";
 };
 
+let unhandledActionType: never;
+
 export const counterReducer = (
   state: CounterState,
   action: CounterAction
@@ -33,10 +35,9 @@ export const counterReducer = (
     case "setStatus":
       return { ...state, status: action.payload };
     default:
+      unhandledActionType = action;
       throw new Error(
-        `Unexpected action type: ${
-          (action as any).type
-        }. Please double check the counter reducer.`
+        `Unexpected action type: ${unhandledActionType}. Please double check the counter reducer.`
       );
   }
 };
